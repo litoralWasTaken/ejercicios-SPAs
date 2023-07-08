@@ -1,0 +1,18 @@
+<form method="POST" id="app-form" action="#">
+    <input appCheckInput type="text" name="test" [(ngModel)]="formValues.test" />
+    <label for="user-email"> Email:
+        <input appCheckInput type="email" id="user-email" name="user-email" [(ngModel)]="formValues.userEmail" />
+    </label>
+    <label for="user-password"> Password:
+        <input appCheckInput type="password" id="user-password" name="user-password"
+            [(ngModel)]="formValues.userPassword" />
+    </label>
+
+    <button type="submit" (click)="validateForm()"> Submit! </button>
+
+</form>
+
+
+<p>form elements: {{formValues.test}}</p>
+
+<p *ngIf="isValidated">user form elements: {{formValues.userEmail}}, {{formValues.userPassword}}</p>
