@@ -1,0 +1,20 @@
+<form [formGroup]="formGroup">
+
+    <label for="username">
+        Username:
+        <input type="text" name="username" value="" id="username" formControlName="username" />
+    </label>
+    <br />
+    <label for="password">
+        Password:
+        <input type="password" name="password" value="" id="password" formControlName="password" />
+    </label>
+    <br />
+</form>
+
+<div>
+    <h2>Controls: </h2>
+
+    <p>{{formGroup.getRawValue().username}}</p>
+    <p>{{formGroup.getRawValue().password}}</p>
+</div>
