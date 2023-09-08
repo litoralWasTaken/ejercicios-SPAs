@@ -1,0 +1,16 @@
+<div id="card-list-selected">
+    <pre>
+        {{cocktailClicked | json}}
+    </pre>
+</div>
+
+<div id="card-list-root" *ngIf="cocktailError.length == 0">
+    <ng-container *ngIf="cocktailList | async as list">
+        <app-card *ngFor="let cocktail of list.drinks" [drink]="cocktail" (drinkClicked)="showDrinkClicked($event)">
+        </app-card>
+    </ng-container>
+</div>
+
+<div id="card-list-error" *ngIf="cocktailError.length != 0">
+    {{cocktailError | json}}
+</div>

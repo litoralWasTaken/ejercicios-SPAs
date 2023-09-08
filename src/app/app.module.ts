@@ -3,16 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CardListComponent } from './components/card-list/card-list.component';
+import { CardComponent } from './components/card/card.component';
+import { CocktailService } from './services/cocktail.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardListComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CocktailService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
